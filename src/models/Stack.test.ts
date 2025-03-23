@@ -1,8 +1,8 @@
-import Stack from './Stack.js';
+import Stack from './Stack';
 
 describe('My Stack', () => {
-    let stack;
-    let value;
+    let stack: Stack<number>;
+    let value: number
 
     beforeEach(() => {
         stack = new Stack();
@@ -10,13 +10,11 @@ describe('My Stack', () => {
     });
 
     it('is created empty', () => {
-        expect(stack.top).toBe(-1);
         expect(stack.isEmpty()).toBe(true);
     });
 
     it('can push to the top', () => {
         stack.push(value);
-        expect(stack.top).toBe(0);
         expect(stack.isEmpty()).toBe(false);
     });
 

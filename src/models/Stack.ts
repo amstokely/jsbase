@@ -1,24 +1,27 @@
-class Stack {
+class Stack<T> {
+    private items: { [key: number]: T };
+    private top: number;
+
     constructor() {
         this.items = {};
         this.top = -1;
     }
 
-    isEmpty() {
+    isEmpty(): boolean {
         return this.top === -1;
     }
 
-    push(value) {
+    push(value: T): void {
         this.top += 1;
         this.items[this.top] = value;
     }
 
-    peek() {
+    peek(): T | null {
         if (this.isEmpty()) return null;
         return this.items[this.top];
     }
 
-    pop() {
+    pop(): T | null {
         if (this.isEmpty()) return null;
         const value = this.items[this.top];
         delete this.items[this.top];
